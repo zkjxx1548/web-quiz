@@ -23,14 +23,51 @@ public class ProductController {
     @Autowired
     OrderRepository orderRepository;
 
-
-//    public static void init() {
-//
-//        new ProductRepository().save(ProductDto.builder().name("可乐1").price(1).unit("瓶").build());
-//    }
-
     @GetMapping("/product")
     public ResponseEntity<List<Product>> getProductList() {
+        ProductDto productDto1 =
+                ProductDto.builder()
+                        .name("可乐1")
+                        .price(1)
+                        .unit("瓶")
+                        .build();
+        ProductDto productDto2 =
+                ProductDto.builder()
+                        .name("可乐2")
+                        .price(1)
+                        .unit("瓶")
+                        .build();
+        ProductDto productDto3 =
+                ProductDto.builder()
+                        .name("可乐3")
+                        .price(1)
+                        .unit("瓶")
+                        .build();
+        ProductDto productDto4 =
+                ProductDto.builder()
+                        .name("可乐4")
+                        .price(1)
+                        .unit("瓶")
+                        .build();
+        ProductDto productDto5 =
+                ProductDto.builder()
+                        .name("可乐5")
+                        .price(1)
+                        .unit("瓶")
+                        .build();
+        ProductDto productDto6 =
+                ProductDto.builder()
+                        .name("可乐6")
+                        .price(1)
+                        .unit("瓶")
+                        .build();
+        productRepository.save(productDto1);
+        productRepository.save(productDto2);
+        productRepository.save(productDto3);
+        productRepository.save(productDto4);
+        productRepository.save(productDto5);
+        productRepository.save(productDto6);
+
         List<Product> products =
                 productRepository.findAll().stream()
                         .map(

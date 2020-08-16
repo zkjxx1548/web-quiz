@@ -35,35 +35,9 @@ class ProductControllerTest {
 
     @Test
     void should_return_products_list_when_get() throws Exception {
-        ProductDto productDto1 =
-                ProductDto.builder()
-                        .name("可乐1")
-                        .price(1)
-                        .unit("瓶")
-                        .build();
 
-
-        productRepository.save(productDto1);
         mockMvc.perform(get("/product"))
-                .andExpect(jsonPath("$", hasSize(1)))
-                .andExpect(jsonPath("$[0].name", is("可乐1")))
-                .andExpect(jsonPath("$[0].price", is(1)))
-                .andExpect(jsonPath("$[0].unit", is("瓶")))
-                .andExpect(status().isOk());
-    }
-
-    @Test
-    void should_add_product_when_() throws Exception {
-        ProductDto productDto1 =
-                ProductDto.builder()
-                        .name("可乐1")
-                        .price(1)
-                        .unit("瓶")
-                        .build();
-
-        productRepository.save(productDto1);
-        mockMvc.perform(get("/product"))
-                .andExpect(jsonPath("$", hasSize(1)))
+                .andExpect(jsonPath("$", hasSize(6)))
                 .andExpect(jsonPath("$[0].name", is("可乐1")))
                 .andExpect(jsonPath("$[0].price", is(1)))
                 .andExpect(jsonPath("$[0].unit", is("瓶")))
