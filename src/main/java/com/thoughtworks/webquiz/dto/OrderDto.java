@@ -15,7 +15,7 @@ import javax.persistence.Table;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "order")
+@Table(name = "product_order")
 public class OrderDto {
     @Id
     @GeneratedValue
