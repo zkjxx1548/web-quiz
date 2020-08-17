@@ -5,6 +5,7 @@ import com.thoughtworks.webquiz.domain.Product;
 import com.thoughtworks.webquiz.repository.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -16,6 +17,7 @@ public class OrderController {
     @Autowired
     OrderRepository orderRepository;
 
+    @CrossOrigin(origins = "http://localhost:1234")
     @GetMapping("/order")
     public ResponseEntity<List<Order>> getProductList() {
         List<Order> orders = orderRepository.findAll().stream()

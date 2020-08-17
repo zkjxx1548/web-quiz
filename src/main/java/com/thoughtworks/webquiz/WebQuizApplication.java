@@ -15,13 +15,13 @@ public class WebQuizApplication {
 		SpringApplication.run(WebQuizApplication.class, args);
 	}
 
-	@Bean
-	public FilterRegistrationBean registerFilter() {
-		FilterRegistrationBean bean = new FilterRegistrationBean();
-
-		bean.addUrlPatterns("/*");
-		bean.setFilter(new CrosFilter());
-
-		return bean;
-	}
+//	@Bean
+//	public FilterRegistrationBean registerFilter() {
+//		FilterRegistrationBean bean = new FilterRegistrationBean();
+//
+//		bean.addUrlPatterns("/*");
+//		bean.setFilter(new CrosFilter());
+//
+//		return bean;
+//	}
 }

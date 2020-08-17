@@ -9,6 +9,7 @@ import com.thoughtworks.webquiz.repository.ProductRepository;
 import javafx.scene.canvas.GraphicsContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -23,6 +24,7 @@ public class ProductController {
     @Autowired
     OrderRepository orderRepository;
 
+    @CrossOrigin(origins = "http://localhost:1234")
     @GetMapping("/product")
     public ResponseEntity<List<Product>> getProductList() {
         ProductDto productDto1 =
@@ -81,6 +83,8 @@ public class ProductController {
         return ResponseEntity.ok(products);
     }
 
+
+    @CrossOrigin(origins = "http://localhost:1234")
     @GetMapping("/product/{id}")
     public ResponseEntity<Product> addProductToOrder(@PathVariable int id) {
         ProductDto productDto = productRepository.findById(id).get();
